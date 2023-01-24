@@ -1,5 +1,6 @@
 {
     "discord_bot_token":"",
     "discord_channel_id":"",
-    "openAI_key": ""
+    "openAI_key": "",
+    "fine_tuned_model": "text-davinci-003"
 }

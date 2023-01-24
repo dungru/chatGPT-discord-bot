@@ -17,10 +17,12 @@ def get_config() -> dict:
 
 config = get_config()
 openai.api_key = config['openAI_key']
-
+model_name = config['fine_tuned_model']
+if not model_name:
+    model_name = "text-davinci-003"
 async def handle_response(message) -> str:
     response = await sync_to_async(openai.Completion.create)(
-        model="text-davinci-003",
+        model=model_name,
         prompt=message,
         temperature=0.7,
         max_tokens=2048,
